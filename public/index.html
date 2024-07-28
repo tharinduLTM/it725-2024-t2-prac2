@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+  <!-- Import Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Import materialize.css -->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+  <!-- Let browser know website is optimized for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    body {
+      background-image: url('image/wallpaper3.jpg');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+    }
+
+    
+  </style>
+
+
 </head>
+
 <body>
-    <h1>Main Landing page</h1>
+  <!-- JavaScript at end of body for optimized loading -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <nav style="background-color: #006064;">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" >Please Enter The Original Price & Discount Percentage</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+      </ul>
+    </div>
+  </nav>  
+
+  <div class="container">
+    <h1>Discount Calculator</h1>
+    <div class="input-field">
+      <input id="originalPrice" type="number">
+      <label for="originalPrice">Original Price</label>
+    </div>
+    <div class="input-field">
+      <input id="discountPercentage" type="number">
+      <label for="discountPercentage">Discount Percentage</label>
+    </div>
+    <a class="waves-effect waves-light btn" id="calculateDiscountButton">Calculate Discount</a>
+    <div>
+      <p id="discountAmount">Discount:</p>
+      <p id="finalPrice">Total after discount:</p>
+    </div>
+  </div>
 </body>
 </html>

@@ -18,7 +18,25 @@ const express= require("express");
             res.set('Content-Type', 'text/html');
             res.send(Buffer.from(n1));     
         })
-        console.log (addTwoNumber(19,12));
+
+        app.get("/calculateDiscount",(req,res)=>{
+            const originalPrice = parseFloat(req.query.originalPrice);
+            const discountPercentage = parseFloat(req.query.discountPercentage);
+
+            const discountAmount = (originalPrice * discountPercentage) / 100;
+            const finalPrice = originalPrice - discountAmount;
+
+            res.json({
+                statuscocde:200,
+                data:{
+                    discountAmount: discountAmount,
+                    finalPrice: finalPrice
+                }
+            })
+        })
+
+
+        //console.log (addTwoNumber(19,12));
         const port=3040;
         app.listen(port,()=> {
             console.log("hello i'm listening to port "+port);
